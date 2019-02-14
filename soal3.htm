@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan</title>
+    <script defer src="soal3.js"></script>
+    <style>
+        fieldset {
+            width: 45%;
+            text-align: left;
+            padding-left: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px
+        }
+    </style>
+</head>
+<body>
+<center>
+    <form id="formSearch">
+        <fieldset><legend>Filter Table</legend>
+        <p>Nama : <input type="text" name="nama" oninput="searchNama()" id="nama"></p>
+        <p>Umur : <input type="number" name="umur" onkeyup="searchUsia()" id="umur1"> -
+            <input type="number" name="umur" onkeyup="searchUsia()" id="umur2"></p>
+        <p>Pekerjaan : <select id="kerja"></select></p>
+        <p><input type="button" onclick="searchKerja()" value="Search Job"></p>
+        <p>
+            <input type="radio" name="gender" value="Laki-laki" id="male"><label for="male">Laki-laki</label>
+            <input type="radio" name="gender" value="Perempuan" id="female"><label for="female">Perempuan</label>
+        </p>
+        <p><input type="button" onclick="searchGender()" value="Filter Gender"></p>
+        </fieldset>
+    </form>
+    <fieldset><legend>Sorting</legend>
+        <p>
+            <button onclick="fnSortNama()" id="sNama" value="ascending">Sort Nama</button>
+            <button onclick="fnSortUmur()" id="sUmur" value="ascending">Sort Umur</button>
+            <button onclick="fnSortGender()" id="sGender" value="ascending">Sort Gender</button>
+            <button onclick="fnSortKerja()" id="sKerja" value="ascending">Sort Kerja</button>
+        </p>
+    </fieldset>
+    <form id="formInput">
+        <fieldset><legend>Input Data</legend>
+            <table>
+                <td><input type="text" name="name" id="name"></td>
+                <td><input type="number" name="age" id="age"></td>
+                <td><input type="text" name="job" id="job"></td>
+                <td>
+                    <input type="radio" name="sex" value="Laki-laki" id="sexM"><label for="sexM">Laki-laki</label>
+                    <input type="radio" name="sex" value="Perempuan" id="sexF"><label for="sexF">Perempuan</label>
+                </td>
+            </table>
+            <p><input type="button" onclick="input()" value="Input"></p>
+        </fieldset>
+    </form>
+    <fieldset><legend>Tabel Data</legend>
+        <table id="tabelData">
+            <thead id="head">
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Gender</th>
+                <th>Pekerjaan</th>
+            </thead>
+            <tbody id="body"></tbody>
+        </table>
+    </fieldset>
+</center>
+</body>
+</html>
